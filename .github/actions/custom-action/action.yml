@@ -1,0 +1,12 @@
+name: "Custom Greeting"
+description: "Prints a greeting message"
+inputs:
+  name:
+    required: true
+    description: "Name to greet"
+runs:
+  using: "composite"
+  steps:
+    - run: echo "Hello, ${{ inputs.name }}!"
+      shell: bash
+

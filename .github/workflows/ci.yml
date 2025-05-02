@@ -1,0 +1,31 @@
+name: Build and Test
+
+on:
+  workflow_call:
+    inputs:
+      build_target:
+        required: true
+        type: string
+    secrets:
+      SECRET_TOKEN:
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Building target: ${{ inputs.build_target }}"
+
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - run: echo "Running tests..."
+
+  example:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: stamak/gh-actions-lib-poc/.github/actions/custom-action@main
+        with:
+          name: "GitHub Actions"
