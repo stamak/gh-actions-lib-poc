@@ -7,6 +7,6 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: echo "Hello, ${{ inputs.name }} V2!"
+    - run: echo "Hello, ${{ inputs.name }} V3!"
       shell: bash
 
