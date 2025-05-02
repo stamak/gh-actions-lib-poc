@@ -26,6 +26,6 @@ jobs:
   example:
     runs-on: ubuntu-latest
     steps:
-      - uses: stamak/gh-actions-lib-poc/.github/actions/custom-action@main
+      - uses: stamak/gh-actions-lib-poc/.github/actions/custom-action@custom-action/v0.0.2
         with:
           name: "GitHub Actions"
